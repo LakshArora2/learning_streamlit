@@ -3,14 +3,13 @@
 
 # In[14]:
 
-
 import streamlit as st
 import pytest
 import pickle
 import pandas as pd
 import numpy as np
 
-@pytest.fixture(scope="session") # Everytime i run pytest, this model will be loaded only once
+# @pytest.fixture(scope="session") # Everytime i run pytest, this model will be loaded only once
 
 # 'loan_amnt', 'installment', 'annual_inc', 'dti', 'revol_util',
 grade = st.selectbox("Grade", ['A','B','C','D','E','F','G'])
