@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[14]:
-
-
 import pandas as pd
 from category_encoders import TargetEncoder
 from xgboost import XGBClassifier
@@ -36,9 +33,9 @@ xgb_model = XGBClassifier(
 # Fit model
 xgb_model.fit(X, y)
 
+# Save model and encoder
+with open("target_encoder.pkl", "wb") as f:
+    pickle.dump(te, f)
 
-# In[ ]:
-
-
-
-
+with open("xgb_loan_pred_model.pkl", "wb") as f:
+    pickle.dump(xgb_model, f)
