@@ -23,7 +23,7 @@ annual_inc = st.number_input("Annual Income", min_value=0.0)
 dti = st.number_input("Debt to Income", min_value=0.0)
 revol_util = st.number_input("Revolving utilization rate", min_value=0.0)
 
-def model():
+def xgb_model():
     with open("xgb_loan_pred_model.pkl", "rb") as f:
         return pickle.load(f)
     
@@ -49,12 +49,11 @@ cat_cols = ['grade', 'zip_code', 'application_type', 'purpose']
 input_df[cat_cols] = te().transform(input_df[cat_cols])
 
 # Predict
-prediction = model.predict(input_df)[0]
-probability = model.predict_proba(input_df)[0][1]
+prediction = xgb_model().predict(input_df)[0]
+probability = xgb_model().predict_proba(input_df)[0][1]
 
 # Display Result
 if prediction == 1:
     st.error(f"⚠️ High Risk of Default (Probability: {probability:.2%})")
 else:
     st.success(f"✅ Low Risk (Probability: {probability:.2%})")
-
