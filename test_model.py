@@ -4,7 +4,6 @@
 # In[14]:
 
 import streamlit as st
-import pytest
 import pickle
 import pandas as pd
 import numpy as np
@@ -28,7 +27,7 @@ def model():
     with open("xgb_loan_pred_model.pkl", "rb") as f:
         return pickle.load(f)
     
-def encode():
+def te():
     with open("target_encoder.pkl", "rb") as f:
         return pickle.load(f)
 
@@ -47,7 +46,7 @@ input_df = pd.DataFrame([{
 
 # Encode categorical variables
 cat_cols = ['grade', 'zip_code', 'application_type', 'purpose']
-input_df[cat_cols] = encode.transform(input_df[cat_cols])
+input_df[cat_cols] = te.transform(input_df[cat_cols])
 
 # Predict
 prediction = model.predict(input_df)[0]
