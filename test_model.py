@@ -46,7 +46,7 @@ input_df = pd.DataFrame([{
 
 # Encode categorical variables
 cat_cols = ['grade', 'zip_code', 'application_type', 'purpose']
-input_df[cat_cols] = te.transform(input_df[cat_cols])
+input_df[cat_cols] = te().transform(input_df[cat_cols])
 
 # Predict
 prediction = model.predict(input_df)[0]
