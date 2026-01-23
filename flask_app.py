@@ -35,12 +35,13 @@ def predict():
 
     prediction = xgb_model.predict(input_df)[0]
     probability = xgb_model.predict_proba(input_df)[0][1]
-
+    
+    res = ""
     if prediction == 1:
         res = (f"⚠️ High Risk of Default (Probability: {probability:.2%})")
     else:
         res = (f"✅ Low Risk (Probability: {probability:.2%})")
-        
+
     return jsonify({"message": res })
 
 if __name__ == "__main__":
