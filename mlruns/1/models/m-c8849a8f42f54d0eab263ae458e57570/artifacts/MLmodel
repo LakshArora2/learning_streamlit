@@ -1,0 +1,22 @@
+artifact_path: file:c:/Users/itviv/Documents/GitHub/learning_streamlit/mlruns/1/models/m-c8849a8f42f54d0eab263ae458e57570/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.11
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+mlflow_version: 3.8.1
+model_id: m-c8849a8f42f54d0eab263ae458e57570
+model_size_bytes: 65631577
+model_uuid: m-c8849a8f42f54d0eab263ae458e57570
+prompts: null
+run_id: 67acd8f25fa14170ad5a814189f4d9e7
+utc_time_created: '2026-01-24 14:02:44.780632'
