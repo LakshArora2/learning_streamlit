@@ -30,14 +30,9 @@ EXPOSE 5000
 # Using python to run the flask application
 CMD ["python", "flask_app.py"]
 
-# Run the command 'docker build -t loan-default-prediction-app .' to build the image
 
 # Next code says that look at port 5000 in the container and map it to port 5000 on the host machine
-# Run the command 'docker run -p 5000:5000 loan-default-prediction-app' to run the container
 
 #  To share the docker image, first login to docker hub using 'docker login' command
-# Then tag the image using 'docker tag loan-default-prediction-app your_dockerhub
-# Finally push the image to docker hub using 'docker push your_dockerhub/loan-default-prediction-app'
-# 'docker tag-'
 
-# "Python base image docker" for ready docker images with python installed
+
